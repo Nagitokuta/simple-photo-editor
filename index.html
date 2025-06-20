@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>シンプル写真編集Webアプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- アップロード画面 -->
+<div id="uploadScreen">
+  <h1>シンプル写真編集Webアプリ</h1>
+  <hr>
+  <div class="upload-area">
+    <input type="file" id="photoInput" accept="image/*">
+    <p>写真をアップロードしてください</p>
+    <button id="uploadButton">アップロード</button>
+    <div id="uploadError" class="error-message"></div>
+  </div>
+</div>
+
+  <!-- 編集画面 -->
+  <div id="editScreen" style="display: none;">
+    <h1>シンプル写真編集Webアプリ</h1>
+    <hr>
+    <div class="edit-area">
+      <div class="photo-preview">
+        <canvas id="photoCanvas" width="400" height="300"></canvas>
+      </div>
+      <div class="tools">
+        <div class="edit-tools">
+          <h2>編集ツール</h2>
+          <button id="cropButton">トリミング</button>
+          <button id="rotateButton">回転</button>
+          <button id="resizeButton">サイズ変更</button>
+        </div>
+        <div class="filter-tools">
+          <h2>フィルター</h2>
+          <button class="filter-btn" data-filter="normal">ノーマル</button>
+          <button class="filter-btn" data-filter="monochrome">モノクロ</button>
+          <button class="filter-btn" data-filter="sepia">セピア</button>
+          <button class="filter-btn" data-filter="vintage">ビンテージ</button>
+        </div>
+      </div>
+    </div>
+    <div class="edit-actions">
+      <button id="saveButton">保存</button>
+      <button id="changePhotoButton">写真を変更</button>
+    </div>
+  </div>
+
+  <!-- 保存完了画面 -->
+  <div id="completeScreen" style="display: none;">
+    <h1>シンプル写真編集Webアプリ</h1>
+    <hr>
+    <div class="complete-message">
+      <p>編集した写真を保存しました。</p>
+      <button id="editAgainButton">もう一度編集する</button>
+      <button id="backToTopButton">トップに戻る</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
